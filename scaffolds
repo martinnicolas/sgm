@@ -1,0 +1,8 @@
+rails g scaffold Subestacion codigo:string nombre:string seccion_id:integer
+rails g scaffold Seccion nombre:string
+rails g scaffold Tomaestado nombre:string
+rails g scaffold SeccionTomaestado nombre:string
+rails g scaffold Ruta nombre:string
+rails g scaffold Medidor nombre:string
+rails g scaffold RutaMedidor nombre:string
+rails g scaffold Cliente nombre:string
