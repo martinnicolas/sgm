@@ -1,4 +1,4 @@
-SGM (Sistem de prueba)
+SGM (Sistema de prueba)
 ===
 
 
