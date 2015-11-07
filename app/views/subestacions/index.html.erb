@@ -1,4 +1,4 @@
-<%- model_class = Seccion -%>
+<%- model_class = Subestacion -%>
 <div class="page-header">
   <h4><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h4>
 </div>
@@ -6,22 +6,24 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:codigo) %></th>
       <th><%= model_class.human_attribute_name(:nombre) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
-    <% @seccions.each do |seccion| %>
+    <% @subestacions.each do |subestacion| %>
       <tr>
-        <td><%= link_to seccion.id, seccion_path(seccion) %></td>
-        <td><%= seccion.nombre %></td>
-        <td><%=l seccion.created_at %></td>
+        <td><%= link_to subestacion.id, subestacion_path(subestacion) %></td>
+        <td><%= subestacion.codigo %></td>
+        <td><%= subestacion.nombre %></td>
+        <td><%=l subestacion.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_seccion_path(seccion), :class => 'btn btn-default btn-xs' %>
+                      edit_subestacion_path(subestacion), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      seccion_path(seccion),
+                      subestacion_path(subestacion),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-xs btn-danger' %>
@@ -31,4 +33,4 @@
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),new_seccion_path,:class => 'btn btn-primary' %>
+<%= link_to t('.new', :default => t("helpers.links.new")),new_subestacion_path,:class => 'btn btn-primary' %>

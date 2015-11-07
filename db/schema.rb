@@ -11,9 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151105211510) do
+ActiveRecord::Schema.define(version: 20151107213207) do
 
   create_table "seccions", force: :cascade do |t|
+    t.string   "nombre",     limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "subestacions", force: :cascade do |t|
+    t.string   "codigo",     limit: 255
     t.string   "nombre",     limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
