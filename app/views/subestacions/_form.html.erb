@@ -1,38 +1,25 @@
-<%= form_for @subestacion, :html => { :class => "form-horizontal subestacion" } do |f| %>
+<%= form_for(@subestacion) do |f| %>
+  <% if @subestacion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@subestacion.errors.count, "error") %> prohibited this subestacion from being saved:</h2>
 
-    <% if @subestacion.errors.any? %>
-    <div id="error_expl" class="panel panel-danger">
-      <div class="panel-heading">
-        <h3 class="panel-title"><%= pluralize(@subestacion.errors.count, "error") %> prohibited this subestacion from being saved:</h3>
-      </div>
-      <div class="panel-body">
-        <ul>
-        <% @subestacion.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
-      </div>
+      <ul>
+      <% @subestacion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
     </div>
   <% end %>
 
-  <div class="control-group">
-    <%= f.label :codigo, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :codigo, :class => 'form-control' %>
-    </div>
-    <%= error_span(@subestacion[:codigo]) %>
+  <div class="field">
+    <%= f.label :codigo %><br>
+    <%= f.text_field :codigo %>
   </div>
-  <div class="control-group">
-    <%= f.label :nombre, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :nombre, :class => 'form-control' %>
-    </div>
-    <%= error_span(@subestacion[:nombre]) %>
+  <div class="field">
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre %>
   </div>
-
-
-  <%= f.submit nil, :class => 'btn btn-primary' %>
-  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-            subestacions_path, :class => 'btn btn-default' %>
-
+  <div class="actions">
+    <%= f.submit %>
+  </div>
 <% end %>

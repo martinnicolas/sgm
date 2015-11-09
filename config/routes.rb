@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :seccions
+  devise_for :users, :controllers => { :registrations => "users/registrations" }
   resources :subestacions
   get 'index/index'
 
