@@ -9,12 +9,14 @@ class SubestacionsController < ApplicationController
 
   # GET /subestacions/1
   # GET /subestacions/1.json
-  def show
+  def show   
   end
 
   # GET /subestacions/new
   def new
     @subestacion = Subestacion.new
+    # require the ability to read documents
+    authorize! :new, @subestacion
   end
 
   # GET /subestacions/1/edit
@@ -28,7 +30,7 @@ class SubestacionsController < ApplicationController
 
     respond_to do |format|
       if @subestacion.save
-        format.html { redirect_to @subestacion, notice: 'Subestacion was successfully created.' }
+        format.html { redirect_to @subestacion, notice: 'Se ha creado una nueva Subestacion.' }
         format.json { render :show, status: :created, location: @subestacion }
       else
         format.html { render :new }
@@ -42,7 +44,7 @@ class SubestacionsController < ApplicationController
   def update
     respond_to do |format|
       if @subestacion.update(subestacion_params)
-        format.html { redirect_to @subestacion, notice: 'Subestacion was successfully updated.' }
+        format.html { redirect_to @subestacion, notice: 'Se ha actualizado la Subestación.' }
         format.json { render :show, status: :ok, location: @subestacion }
       else
         format.html { render :edit }
@@ -56,7 +58,7 @@ class SubestacionsController < ApplicationController
   def destroy
     @subestacion.destroy
     respond_to do |format|
-      format.html { redirect_to subestacions_url, notice: 'Subestacion was successfully destroyed.' }
+      format.html { redirect_to subestacions_url, notice: 'Se ha eliminado la Subestación.' }
       format.json { head :no_content }
     end
   end

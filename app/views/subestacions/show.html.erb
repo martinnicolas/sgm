@@ -1,7 +1,20 @@
-<p id="notice"><%= notice %></p>
+<% if notice != nil %>
+<div class="alert alert-success"> 
+    <p id="notice"><%= notice %></p>
+</div>  
+<% end %>
+
+<div class="page-header"><h4>Subestación</h4></div>
+
+<ul class="nav nav-pills">
+	<li role="presentation"><%= link_to 'Editar', edit_subestacion_path(@subestacion) %></li>
+	<li role="presentation"><%= link_to 'Volver', subestacions_path %></li>
+</ul>
+
+<br/>
 
 <p>
-  <strong>Codigo:</strong>
+  <strong>Código:</strong>
   <%= @subestacion.codigo %>
 </p>
 
@@ -10,5 +23,3 @@
   <%= @subestacion.nombre %>
 </p>
 
-<%= link_to 'Edit', edit_subestacion_path(@subestacion) %> |
-<%= link_to 'Back', subestacions_path %>

@@ -1,6 +1,11 @@
-<h1>Editing Subestacion</h1>
+<div class="page-header"><h4>Editando subestación</h4></div>
+
+<ul class="nav nav-pills">
+	<li role="presentation"><%= link_to 'Ver', @subestacion %></li>
+	<li role="presentation"><%= link_to 'Volver', subestacions_path %></li>
+</ul>
+
+<br/>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @subestacion %> |
-<%= link_to 'Back', subestacions_path %>
