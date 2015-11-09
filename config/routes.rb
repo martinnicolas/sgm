@@ -19,6 +19,10 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
+  devise_scope :user do
+    get "sign_up", to: "devise/registrations#new"
+  end
+
   # Example resource route with options:
   #   resources :products do
   #     member do
