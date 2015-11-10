@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   #   resources :products
 
   devise_scope :user do
-    get "sign_up", to: "devise/registrations#new"
+    get "sign_in", to: "devise/sessions#new"
   end
 
   # Example resource route with options:

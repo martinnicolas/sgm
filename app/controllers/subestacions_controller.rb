@@ -15,8 +15,8 @@ class SubestacionsController < ApplicationController
   # GET /subestacions/new
   def new
     @subestacion = Subestacion.new
-    # require the ability to read documents
-    authorize! :new, @subestacion
+    # require the ability to create Subestacions
+    authorize! :new, @subestacion, :message => "Inicie sesión para poder continuar"
   end
 
   # GET /subestacions/1/edit
