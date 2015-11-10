@@ -13,11 +13,11 @@
 
   <div class="form-group">
     <%= f.label :codigo, "Código" %><br>
-    <%= f.text_field :codigo, :class => "form-control" %>
+    <%= f.text_field :codigo, :class => "form-control", required: true %>
   </div>
   <div class="form-group">
     <%= f.label :nombre %><br>
-    <%= f.text_field :nombre, :class => "form-control" %>
+    <%= f.text_field :nombre, :class => "form-control", required: true %>
   </div>
   <div class="actions">
     <%= f.submit :value => "Guardar", :class => "btn btn-primary"%>

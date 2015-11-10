@@ -1,31 +1,25 @@
-<%= form_for @seccion, :html => { :class => "form-horizontal seccion" } do |f| %>
+<%= form_for(@seccion) do |f| %>
+  <% if @seccion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@seccion.errors.count, "error") %> prohibited this seccion from being saved:</h2>
 
-    <% if @seccion.errors.any? %>
-    <div id="error_expl" class="panel panel-danger">
-      <div class="panel-heading">
-        <h3 class="panel-title"><%= pluralize(@seccion.errors.count, "error") %> prohibited this seccion from being saved:</h3>
-      </div>
-      <div class="panel-body">
-        <ul>
-        <% @seccion.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
-      </div>
+      <ul>
+      <% @seccion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
     </div>
   <% end %>
 
-  <div class="control-group">
-    <%= f.label :nombre, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :nombre, :class => 'form-control' %>
-    </div>
-    <%= error_span(@seccion[:nombre]) %>
+  <div class="form-group">
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre, :class => "form-control" %>
   </div>
-
-
-  <%= f.submit nil, :class => 'btn btn-primary' %>
-  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-            seccions_path, :class => 'btn btn-default' %>
-
+  <div class="form-group">
+    <%= f.label :subestacion_id %><br>
+    <%= f.text_field :subestacion_id, :class => "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit :value => "Guardar", :class => "btn btn-primary"%>
+  </div>
 <% end %>

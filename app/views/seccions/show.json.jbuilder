@@ -1,1 +1,1 @@
-json.extract! @seccion, :id, :nombre, :created_at, :updated_at
+json.extract! @seccion, :id, :nombre, :subestacion_id, :created_at, :updated_at

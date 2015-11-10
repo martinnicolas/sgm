@@ -18,7 +18,7 @@ class SeccionsControllerTest < ActionController::TestCase
 
   test "should create seccion" do
     assert_difference('Seccion.count') do
-      post :create, seccion: { nombre: @seccion.nombre }
+      post :create, seccion: { nombre: @seccion.nombre, subestacion_id: @seccion.subestacion_id }
     end
 
     assert_redirected_to seccion_path(assigns(:seccion))
@@ -35,7 +35,7 @@ class SeccionsControllerTest < ActionController::TestCase
   end
 
   test "should update seccion" do
-    patch :update, id: @seccion, seccion: { nombre: @seccion.nombre }
+    patch :update, id: @seccion, seccion: { nombre: @seccion.nombre, subestacion_id: @seccion.subestacion_id }
     assert_redirected_to seccion_path(assigns(:seccion))
   end
 

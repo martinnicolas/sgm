@@ -1,5 +1,10 @@
-<%- model_class = Seccion -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1>
-</div>
-<%= render :partial => 'form' %>
+<div class="page-header"><h4>Nueva sección</h4></div>
+
+<ul class="nav nav-pills">
+	<li role="presentation"><%= link_to 'Volver', seccions_path %></li>
+</ul>
+
+<br/>
+
+<%= render 'form' %>
+

@@ -2,6 +2,8 @@
 
 one:
   nombre: MyString
+  subestacion_id: 
 
 two:
   nombre: MyString
+  subestacion_id: 
