@@ -28,7 +28,7 @@ class SeccionsController < ApplicationController
 
     respond_to do |format|
       if @seccion.save
-        format.html { redirect_to @seccion, notice: 'Seccion was successfully created.' }
+        format.html { redirect_to @seccion, notice: 'Se ha creado una nueva Sección.' }
         format.json { render :show, status: :created, location: @seccion }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class SeccionsController < ApplicationController
   def update
     respond_to do |format|
       if @seccion.update(seccion_params)
-        format.html { redirect_to @seccion, notice: 'Seccion was successfully updated.' }
+        format.html { redirect_to @seccion, notice: 'Se ha actualizado la Sección.' }
         format.json { render :show, status: :ok, location: @seccion }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class SeccionsController < ApplicationController
   def destroy
     @seccion.destroy
     respond_to do |format|
-      format.html { redirect_to seccions_url, notice: 'Seccion was successfully destroyed.' }
+      format.html { redirect_to seccions_url, notice: 'Se ha eliminado la Sección.' }
       format.json { head :no_content }
     end
   end

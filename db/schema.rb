@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151110231048) do
+ActiveRecord::Schema.define(version: 20151111224557) do
 
   create_table "roles", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -35,6 +35,14 @@ ActiveRecord::Schema.define(version: 20151110231048) do
 
   create_table "subestacions", force: :cascade do |t|
     t.string   "codigo",     limit: 255
+    t.string   "nombre",     limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "tomaestados", force: :cascade do |t|
+    t.integer  "dni",        limit: 4
+    t.string   "apellido",   limit: 255
     t.string   "nombre",     limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false

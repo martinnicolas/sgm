@@ -4,28 +4,30 @@
 </div>  
 <% end %>
 
-<div class="page-header"><h4>Listado de secciones</h4></div>
+<div class="page-header"><h4>Listado de tomaestados</h4></div>
 
 <ul class="nav nav-pills">
-  <li role="presentation"><%= link_to 'Nueva sección', new_seccion_path %></li>
+  <li role="presentation"><%= link_to 'Nuevo tomaestado', new_tomaestado_path %></li>
 </ul>
 
-<br>
+<br/>
 
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
+      <th>DNI</th>
+      <th>Apellido</th>
       <th>Nombre</th>
-      <th>Subestación</th>
-      <th>&nbsp;</th>
+      <th></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @seccions.each do |seccion| %>
+    <% @tomaestados.each do |tomaestado| %>
       <tr>
-        <td><%= seccion.nombre %></td>
-        <td><%= seccion.subestacion.to_s %></td>
+        <td><%= tomaestado.dni %></td>
+        <td><%= tomaestado.apellido %></td>
+        <td><%= tomaestado.nombre %></td>
         <td style="width: 100px;">
           <div class="dropdown">
             <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -33,12 +35,12 @@
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-              <li><%= link_to 'Ver', seccion %></li>
-              <li><%= link_to 'Editar', edit_seccion_path(seccion) %></li>
-              <li><%= link_to 'Eliminar', seccion, method: :delete, data: { confirm: 'Estás seguro?' } %></li>
+              <li><%= link_to 'Ver', tomaestado %></li>
+              <li><%= link_to 'Editar', edit_tomaestado_path(tomaestado) %></li>
+              <li><%= link_to 'Eliminar', tomaestado, method: :delete, data: { confirm: 'Estás seguro?' } %></li>
             </ul>          
           </div>
-        </td>                
+        </td>        
       </tr>
     <% end %>
   </tbody>

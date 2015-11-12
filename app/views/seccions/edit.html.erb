@@ -1,6 +1,11 @@
-<h1>Editing Seccion</h1>
+<div class="page-header"><h4>Editando sección</h4></div>
+
+<ul class="nav nav-pills">
+	<li role="presentation"><%= link_to 'Ver', @seccion %></li>
+	<li role="presentation"><%= link_to 'Volver', seccions_path %></li>
+</ul>
+
+<br/>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @seccion %> |
-<%= link_to 'Back', seccions_path %>

@@ -1,7 +1,7 @@
 rails g scaffold Subestacion codigo:string nombre:string
-rails g scaffold Seccion nombre:string subestacion_id:references
-rails g scaffold SubestacionSeccion subestacion_id:integer seccion_id:integer
-rails g scaffold Tomaestado nombre:string
+rails g scaffold Seccion nombre:string subestacion:references
+rails g scaffold Tomaestado dni:integer apellido:string nombre:string user:references
+
 rails g scaffold SeccionTomaestado nombre:string
 rails g scaffold Ruta nombre:string
 rails g scaffold Medidor nombre:string

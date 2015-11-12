@@ -1,4 +1,17 @@
-<p id="notice"><%= notice %></p>
+<% if notice != nil %>
+<div class="alert alert-success"> 
+    <p id="notice"><%= notice %></p>
+</div>  
+<% end %>
+
+<div class="page-header"><h4>Sección</h4></div>
+
+<ul class="nav nav-pills">
+	<li role="presentation"><%= link_to 'Editar', edit_seccion_path(@seccion) %></li>
+	<li role="presentation"><%= link_to 'Volver', seccions_path %></li>
+</ul>
+
+<br/>
 
 <p>
   <strong>Nombre:</strong>
@@ -10,5 +23,3 @@
   <%= @seccion.subestacion %>
 </p>
 
-<%= link_to 'Edit', edit_seccion_path(@seccion) %> |
-<%= link_to 'Back', seccions_path %>
