@@ -1,20 +1,14 @@
-<% if notice != nil %>
-<div class="alert alert-success"> 
-    <p id="notice"><%= notice %></p>
-</div>  
-<% end %>
-
 <div class="page-header"><h4>Tomaestado</h4></div>
 
 <ul class="nav nav-pills">
 	<li role="presentation"><%= link_to 'Editar', edit_tomaestado_path(@tomaestado) %></li>
-	<li role="presentation"><%= link_to 'Volver', tomaestados_path %></li>
+	<li role="presentation"><%= link_to 'Volver', tomaestdos_path %></li>
 </ul>
 
 <br/>
 
 <p>
-  <strong>DNI:</strong>
+  <strong>Dni:</strong>
   <%= @tomaestado.dni %>
 </p>
 
@@ -26,4 +20,9 @@
 <p>
   <strong>Nombre:</strong>
   <%= @tomaestado.nombre %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @tomaestado.user %>
 </p>

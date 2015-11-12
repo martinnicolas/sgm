@@ -1,4 +1,4 @@
-<%= form_for(@tomaestado) do |f| %>
+<%= form_for(@tomaestado, html: {class: "form"}) do |f| %>
   <% if @tomaestado.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@tomaestado.errors.count, "error") %> prohibited this tomaestado from being saved:</h2>
@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :dni, "DNI" %>
+    <%= f.label :dni %>
     <div class="col-lg-10">
       <%= f.number_field :dni, :class => "form-control", required: true %>
     </div>
@@ -27,6 +27,12 @@
     <%= f.label :nombre %>
     <div class="col-lg-10">
       <%= f.text_field :nombre, :class => "form-control", required: true %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :user_id %>
+    <div class="col-lg-10">
+      <%= f.text_field :user_id, :class => "form-control", required: true %>
     </div>
   </div>
   <div class="actions">

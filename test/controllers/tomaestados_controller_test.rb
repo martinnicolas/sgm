@@ -18,7 +18,7 @@ class TomaestadosControllerTest < ActionController::TestCase
 
   test "should create tomaestado" do
     assert_difference('Tomaestado.count') do
-      post :create, tomaestado: { apellido: @tomaestado.apellido, dni: @tomaestado.dni, nombre: @tomaestado.nombre }
+      post :create, tomaestado: { apellido: @tomaestado.apellido, dni: @tomaestado.dni, nombre: @tomaestado.nombre, user_id: @tomaestado.user_id }
     end
 
     assert_redirected_to tomaestado_path(assigns(:tomaestado))
@@ -35,7 +35,7 @@ class TomaestadosControllerTest < ActionController::TestCase
   end
 
   test "should update tomaestado" do
-    patch :update, id: @tomaestado, tomaestado: { apellido: @tomaestado.apellido, dni: @tomaestado.dni, nombre: @tomaestado.nombre }
+    patch :update, id: @tomaestado, tomaestado: { apellido: @tomaestado.apellido, dni: @tomaestado.dni, nombre: @tomaestado.nombre, user_id: @tomaestado.user_id }
     assert_redirected_to tomaestado_path(assigns(:tomaestado))
   end
 

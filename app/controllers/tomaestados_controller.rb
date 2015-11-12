@@ -69,6 +69,6 @@ class TomaestadosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tomaestado_params
-      params.require(:tomaestado).permit(:dni, :apellido, :nombre)
+      params.require(:tomaestado).permit(:dni, :apellido, :nombre, :user_id)
     end
 end

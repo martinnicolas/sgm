@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :clientes
+  resources :ruta
   resources :tomaestados
   resources :seccions
   devise_for :users, :controllers => { :registrations => "users/registrations" }  
