@@ -30,9 +30,9 @@
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :user_id %>
+    <%= f.label :user_id, "Usuario" %>
     <div class="col-lg-10">
-      <%= f.text_field :user_id, :class => "form-control", required: true %>
+      <%= f.collection_select :user_id, User.all, :id, :to_s, {prompt: false}, {:class => "form-control"} %>
     </div>
   </div>
   <div class="actions">

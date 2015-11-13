@@ -8,4 +8,8 @@ class User < ActiveRecord::Base
   def role( role ) 
     !roles.find_by_name( role.to_s.camelize ).nil?
   end 
+
+  def to_s
+  	self.email
+  end
 end
