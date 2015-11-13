@@ -20,14 +20,13 @@
           <%= link_to "Sistema de Gestión de Medidores", index_path, :class => "navbar-brand" %>          
         </div>
         <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="<%= 'active' if params[:controller] == 'index' %>"><%= link_to "Inicio", index_path %>
-            <li class="<%= 'active' if params[:controller] == 'subestacions' %>"><%= link_to "Subestaciones", subestacions_path %>
-            <li class="<%= 'active' if params[:controller] == 'seccions' %>"><%= link_to "Secciones", seccions_path %>
-            <li class="<%= 'active' if params[:controller] == 'tomaestados' %>"><%= link_to "Tomaestados", tomaestados_path %>
-            <li class="<%= 'active' if params[:controller] == 'rutas' %>"><%= link_to "Rutas", ruta_path %>
-            <li class="<%= 'active' if params[:controller] == 'clientes' %>"><%= link_to "Clientes", clientes_path %>
-            <% if user_signed_in? %>
+          <% if user_signed_in? %>
+            <ul class="nav navbar-nav">
+              <li class="<%= 'active' if params[:controller] == 'index' %>"><%= link_to "Inicio", index_path %>
+              <li class="<%= 'active' if params[:controller] == 'subestacions' %>"><%= link_to "Subestaciones", subestacions_path %>
+              <li class="<%= 'active' if params[:controller] == 'seccions' %>"><%= link_to "Secciones", seccions_path %>
+              <li class="<%= 'active' if params[:controller] == 'tomaestados' %>"><%= link_to "Tomaestados", tomaestados_path %>
+              <li class="<%= 'active' if params[:controller] == 'rutas' %>"><%= link_to "Rutas", ruta_path %>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                   <strong><%= current_user.email %></strong>
@@ -39,8 +38,8 @@
                   <li><%= link_to "Salir", destroy_user_session_path, method: :delete %></li>
                 </ul>
               </li>
-              <% end %>
-          </ul>
+            </ul>
+          <% end %>
         </div><!--/.nav-collapse -->
       </div>
     </nav>

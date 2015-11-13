@@ -1,12 +1,16 @@
-<p id="notice"><%= notice %></p>
+<div class="page-header"><h4>Listado de rutas</h4></div>
 
-<h1>Listing Ruta</h1>
+<ul class="nav nav-pills">
+  <li role="presentation"><%= link_to 'Nueva ruta', new_rutum_path %></li>
+</ul>
 
-<table>
+<br>
+
+<table class="table table-striped table-bordered">
   <thead>
     <tr>
       <th>Nombre</th>
-      <th colspan="3"></th>
+      <th>&nbsp;</th>
     </tr>
   </thead>
 
@@ -14,14 +18,22 @@
     <% @ruta.each do |rutum| %>
       <tr>
         <td><%= rutum.nombre %></td>
-        <td><%= link_to 'Show', rutum %></td>
-        <td><%= link_to 'Edit', edit_rutum_path(rutum) %></td>
-        <td><%= link_to 'Destroy', rutum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td style="width: 100px;">
+          <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Acciones
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li><%= link_to 'Ver', rutum %></li>
+              <li><%= link_to 'Editar', edit_rutum_path(rutum) %></li>
+              <li><%= link_to 'Eliminar', rutum, method: :delete, data: { confirm: 'Estás seguro?' } %></li>
+            </ul>          
+          </div>
+        </td>                        
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
 
-<%= link_to 'New Rutum', new_rutum_path %>

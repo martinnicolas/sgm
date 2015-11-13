@@ -1,9 +1,13 @@
-<p id="notice"><%= notice %></p>
+<div class="page-header"><h4>Ruta</h4></div>
+
+<ul class="nav nav-pills">
+	<li role="presentation"><%= link_to 'Editar', edit_rutum_path(@rutum) %></li>
+	<li role="presentation"><%= link_to 'Volver', ruta_path %></li>
+</ul>
+
+<br/>
 
 <p>
   <strong>Nombre:</strong>
   <%= @rutum.nombre %>
 </p>
-
-<%= link_to 'Edit', edit_rutum_path(@rutum) %> |
-<%= link_to 'Back', ruta_path %>

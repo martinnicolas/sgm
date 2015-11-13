@@ -1,6 +1,10 @@
-<h1>Editing Rutum</h1>
+<div class="page-header"><h4>Editando ruta</h4></div>
+
+<ul class="nav nav-pills">
+	<li role="presentation"><%= link_to 'Ver', @rutum %></li>
+	<li role="presentation"><%= link_to 'Volver', ruta_path %></li>
+</ul>
+
+<br/>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @rutum %> |
-<%= link_to 'Back', ruta_path %>

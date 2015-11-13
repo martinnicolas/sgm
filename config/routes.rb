@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :clientes
   resources :ruta
   resources :tomaestados
   resources :seccions
@@ -23,9 +22,9 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
-  devise_scope :user do
-    get "sign_in", to: "devise/sessions#new"
-  end
+  #devise_scope :user do
+  #  get "sign_in", to: "devise/sessions#new"
+  #end
 
   # Example resource route with options:
   #   resources :products do

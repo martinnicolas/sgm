@@ -10,8 +10,6 @@ class SubestacionsController < ApplicationController
   # GET /subestacions/1
   # GET /subestacions/1.json
   def show   
-    # require the ability to show Subestacions
-    authorize! :show, @subestacion, :message => "Inicie sesión para poder continuar"
   end
 
   # GET /subestacions/new
