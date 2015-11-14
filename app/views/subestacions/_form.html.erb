@@ -1,4 +1,4 @@
-<%= form_for(@subestacion, html: {class: "form"}) do |f| %>
+<%= form_for(@subestacion, html: {role: "form"}) do |f| %>
   <% if @subestacion.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@subestacion.errors.count, "error") %> prohibited this subestacion from being saved:</h2>
@@ -13,17 +13,15 @@
 
   <div class="form-group">
     <%= f.label :codigo, "Código" %>
-    <div class="col-lg-10">
+    <div class="col-lg-2">
       <%= f.text_field :codigo, :class => "form-control", required: true %>
     </div>
   </div>
   <div class="form-group">
     <%= f.label :nombre %>
-    <div class="col-lg-10">
+    <div class="col-lg-4">
       <%= f.text_field :nombre, :class => "form-control", required: true %>
     </div>
   </div>
-  <div class="actions">
-    <%= f.submit :value => "Guardar", :class => "btn btn-primary"%>
-  </div>
+  <%= f.submit :value => "Guardar", :class => "btn btn-primary"%>
 <% end %>

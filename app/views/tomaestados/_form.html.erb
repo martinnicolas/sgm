@@ -1,4 +1,4 @@
-<%= form_for(@tomaestado, html: {class: "form"}) do |f| %>
+<%= form_for(@tomaestado, html: {class: "form-horizontal",role: "form"}) do |f| %>
   <% if @tomaestado.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@tomaestado.errors.count, "error") %> prohibited this tomaestado from being saved:</h2>
@@ -13,29 +13,27 @@
 
   <div class="form-group">
     <%= f.label :dni, "DNI" %>
-    <div class="col-lg-10">
+    <div class="col-lg-2">
       <%= f.number_field :dni, :class => "form-control", required: true %>
     </div>
   </div>
   <div class="form-group">
     <%= f.label :apellido %>
-    <div class="col-lg-10">
+    <div class="col-lg-4">
       <%= f.text_field :apellido, :class => "form-control", required: true %>
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :nombre %>
-    <div class="col-lg-10">
+    <%= f.label :nombre, "Nombres" %>
+    <div class="col-lg-4">
       <%= f.text_field :nombre, :class => "form-control", required: true %>
     </div>
   </div>
   <div class="form-group">
     <%= f.label :user_id, "Usuario" %>
-    <div class="col-lg-10">
+    <div class="col-lg-3">
       <%= f.collection_select :user_id, User.all, :id, :to_s, {prompt: false}, {:class => "form-control"} %>
     </div>
   </div>
-  <div class="actions">
-    <%= f.submit :value => "Guardar", :class => "btn btn-primary"%>
-  </div>
+  <%= f.submit :value => "Guardar", :class => "btn btn-primary"%>
 <% end %>

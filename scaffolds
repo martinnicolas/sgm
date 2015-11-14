@@ -2,8 +2,8 @@ rails g scaffold Subestacion codigo:string nombre:string
 rails g scaffold Seccion nombre:string subestacion:references
 rails g scaffold Tomaestado dni:integer apellido:string nombre:string user:references
 rails g scaffold Ruta nombre:string
+rails g scaffold Cliente dni:integer apellido:string nombre:string telefono:string
 
-rails g scaffold Cliente nombre:string
 rails g scaffold Medidor nombre:string
 rails g scaffold RutaMedidor nombre:string
 rails g scaffold SeccionTomaestado nombre:string

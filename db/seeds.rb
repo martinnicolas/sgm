@@ -53,3 +53,7 @@ Rutum.create(nombre: 'Ruta 3')
 #Tomaestados
 #Tomaestado.create(dni: 31343209, apellido: 'Moreno', nombre: 'Felipe', user_id: 2)
 #Tomaestado.create(dni: 32343209, apellido: 'Moreno', nombre: 'Mika', user_id: 3)
+
+#Clientes
+#Cliente.create(dni: 11446687, apellido: 'Ferreras', nombre: 'Graciela Mónica', telefono: '', email: '', domicilio: 'Facundo Quiroga 418')
+#Cliente.create(dni: 11446687, apellido: 'Moreno', nombre: 'María Cecilia', telefono: '', email: '', domicilio: 'Rifleros 220')

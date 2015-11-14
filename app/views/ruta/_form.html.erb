@@ -1,4 +1,4 @@
-<%= form_for(@rutum, html: {class: "form"}) do |f| %>
+<%= form_for(@rutum, html: {role: "form"}) do |f| %>
   <% if @rutum.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@rutum.errors.count, "error") %> prohibited this rutum from being saved:</h2>
@@ -13,11 +13,9 @@
 
   <div class="form-group">
     <%= f.label :nombre %>
-    <div class="col-lg-10">
+    <div class="col-lg-4">
       <%= f.text_field :nombre, :class => "form-control" %>
     </div>
   </div>
-  <div class="actions">
-    <%= f.submit :value => "Guardar", :class => "btn btn-primary"%>
-  </div>
+  <%= f.submit :value => "Guardar", :class => "btn btn-primary"%>
 <% end %>
