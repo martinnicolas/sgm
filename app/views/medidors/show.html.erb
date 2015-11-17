@@ -1,0 +1,43 @@
+<div class="page-header"><h4>Medidor</h4></div>
+
+<ul class="nav nav-pills">
+  <li role="presentation"><%= link_to 'Editar', edit_medidor_path(@medidor) %></li>
+  <li role="presentation"><%= link_to 'Volver', medidors_path %></li>
+</ul>
+
+<br/>
+
+<p>
+  <strong>Numero:</strong>
+  <%= @medidor.numero %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @medidor.nombre %>
+</p>
+
+<p>
+  <strong>Novedades:</strong>
+  <%= @medidor.novedades %>
+</p>
+
+<p>
+  <strong>Novedades criticas:</strong>
+  <%= @medidor.novedades_criticas %>
+</p>
+
+<p>
+  <strong>Latitud:</strong>
+  <%= @medidor.latitud %>
+</p>
+
+<p>
+  <strong>Longitud:</strong>
+  <%= @medidor.longitud %>
+</p>
+
+<p>
+  <strong>Cliente:</strong>
+  <%= @medidor.cliente %>
+</p>

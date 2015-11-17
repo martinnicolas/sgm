@@ -1,7 +1,14 @@
-<p id="notice"><%= notice %></p>
+<div class="page-header"><h4>Cliente</h4></div>
+
+<ul class="nav nav-pills">
+  <li role="presentation"><%= link_to 'Editar', edit_cliente_path(@cliente) %></li>
+  <li role="presentation"><%= link_to 'Volver', clientes_path %></li>
+</ul>
+
+<br/>
 
 <p>
-  <strong>Dni:</strong>
+  <strong>DNI:</strong>
   <%= @cliente.dni %>
 </p>
 
@@ -29,6 +36,3 @@
   <strong>Domicilio:</strong>
   <%= @cliente.domicilio %>
 </p>
-
-<%= link_to 'Edit', edit_cliente_path(@cliente) %> |
-<%= link_to 'Back', clientes_path %>

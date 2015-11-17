@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151114195705) do
+ActiveRecord::Schema.define(version: 20151116202944) do
 
   create_table "clientes", force: :cascade do |t|
     t.integer  "dni",        limit: 4
@@ -23,6 +23,20 @@ ActiveRecord::Schema.define(version: 20151114195705) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
+
+  create_table "medidors", force: :cascade do |t|
+    t.integer  "numero",             limit: 4
+    t.string   "nombre",             limit: 255
+    t.string   "novedades",          limit: 255
+    t.string   "novedades_criticas", limit: 255
+    t.string   "latitud",            limit: 255
+    t.string   "longitud",           limit: 255
+    t.integer  "cliente_id",         limit: 4
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
+
+  add_index "medidors", ["cliente_id"], name: "index_medidors_on_cliente_id", using: :btree
 
   create_table "roles", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -86,6 +100,7 @@ ActiveRecord::Schema.define(version: 20151114195705) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "medidors", "clientes"
   add_foreign_key "seccions", "subestacions"
   add_foreign_key "tomaestados", "users"
 end

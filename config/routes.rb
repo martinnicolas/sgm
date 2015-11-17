@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :medidors
   resources :clientes
   resources :ruta
   resources :tomaestados

@@ -1,6 +1,10 @@
-<h1>Editing Cliente</h1>
+<div class="page-header"><h4>Editando cliente</h4></div>
+
+<ul class="nav nav-pills">
+	<li role="presentation"><%= link_to 'Ver', @cliente %></li>
+	<li role="presentation"><%= link_to 'Volver', clientes_path %></li>
+</ul>
+
+<br/>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @cliente %> |
-<%= link_to 'Back', clientes_path %>

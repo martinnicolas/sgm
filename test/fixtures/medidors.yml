@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  numero: 1
+  nombre: MyString
+  novedades: MyString
+  novedades_criticas: MyString
+  latitud: MyString
+  longitud: MyString
+  cliente_id: 
+
+two:
+  numero: 1
+  nombre: MyString
+  novedades: MyString
+  novedades_criticas: MyString
+  latitud: MyString
+  longitud: MyString
+  cliente_id: 
