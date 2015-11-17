@@ -11,26 +11,26 @@
     </div>
   <% end %>
 
+  <%= f.label :dni, "DNI" %>
   <div class="form-group">
-    <%= f.label :dni, "DNI" %>
     <div class="col-lg-2">
       <%= f.number_field :dni, :class => "form-control", required: true %>
     </div>
   </div>
+  <%= f.label :apellido %>
   <div class="form-group">
-    <%= f.label :apellido %>
     <div class="col-lg-4">
       <%= f.text_field :apellido, :class => "form-control", required: true %>
     </div>
   </div>
+  <%= f.label :nombre, "Nombres" %>
   <div class="form-group">
-    <%= f.label :nombre, "Nombres" %>
     <div class="col-lg-4">
       <%= f.text_field :nombre, :class => "form-control", required: true %>
     </div>
   </div>
+  <%= f.label :user_id, "Usuario" %>
   <div class="form-group">
-    <%= f.label :user_id, "Usuario" %>
     <div class="col-lg-3">
       <%= f.collection_select :user_id, User.all, :id, :to_s, {prompt: false}, {:class => "form-control"} %>
     </div>

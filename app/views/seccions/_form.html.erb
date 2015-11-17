@@ -1,4 +1,4 @@
-<%= form_for(@seccion, html: {role: "form"}) do |f| %>
+<%= form_for(@seccion, html: {role: "form", class: "form-horizontal"}) do |f| %>
   <% if @seccion.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@seccion.errors.count, "error") %> prohibited this seccion from being saved:</h2>
@@ -11,14 +11,14 @@
     </div>
   <% end %>
 
+  <%= f.label :nombre %>
   <div class="form-group">
-    <%= f.label :nombre %>
     <div class="col-lg-4">
       <%= f.text_field :nombre, :class => "form-control", required: true %>
     </div>
   </div>
+  <%= f.label :subestacion_id, "Subestación" %>
   <div class="form-group">
-    <%= f.label :subestacion_id, "Subestación" %>
     <div class="col-lg-5">
       <%= f.collection_select :subestacion_id, Subestacion.all, :id, :to_s, {prompt: false}, {:class => "form-control"} %>
     </div>
