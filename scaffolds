@@ -4,6 +4,5 @@ rails g scaffold Tomaestado dni:integer apellido:string nombre:string user:refer
 rails g scaffold Ruta nombre:string
 rails g scaffold Cliente dni:integer apellido:string nombre:string telefono:string
 rails g scaffold Medidor numero:integer nombre:string novedades:string novedades_criticas:string latitud:string longitud:string cliente:references 
-
-rails g model SeccionTomaestadoRuta seccion:references tomaestado:references ruta:references fecha_inicio:date
-rails g model RutaMedidor ruta:references medidor:references
+rails g model RutaMedidor rutum:references medidor:references
+rails g model SeccionTomaestadoRuta seccion:references tomaestado:references rutum:references fecha_inicio:date fecha_fin:date

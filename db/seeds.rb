@@ -39,8 +39,8 @@ Rutum.create(nombre: 'Ruta 2')
 Rutum.create(nombre: 'Ruta 3')
 
 #Roles
-#Role.create(id: 1, name:'administrador')
-#Role.create(id: 2, name:'tomaestado')
+Role.create(id: 1, name:'administrador')
+Role.create(id: 2, name:'tomaestado')
 
 #Roles_Usuarios
 #RoleUser.create(rol_id: 1, user_id: 1)
@@ -57,5 +57,5 @@ Rutum.create(nombre: 'Ruta 3')
 #Tomaestado.create(dni: 32343209, apellido: 'Moreno', nombre: 'Mika', user_id: 3)
 
 #Clientes
-#Cliente.create(dni: 11446687, apellido: 'Ferreras', nombre: 'Graciela Mónica', telefono: '', email: '', domicilio: 'Facundo Quiroga 418')
-Cliente.create(dni: 11446687, apellido: 'Moreno', nombre: 'María Cecilia', telefono: '', email: '', domicilio: 'Rifleros 220')
+Cliente.create(dni: 11446687, apellido: 'Ferreras', nombre: 'Graciela Mónica', telefono: '2804405149', email: 'graciela.ferreras@gmail.com', domicilio: 'Facundo Quiroga 418')
+Cliente.create(dni: 11446687, apellido: 'Moreno', nombre: 'María Cecilia', telefono: '2804681490', email: 'maria.cecilia.moreno12@gmail.com', domicilio: 'Rifleros 220')

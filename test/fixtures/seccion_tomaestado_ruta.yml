@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  seccion_id: 
+  tomaestado_id: 
+  rutum_id: 
+  fecha_inicio: 2015-11-18
+  fecha_fin: 2015-11-18
+
+two:
+  seccion_id: 
+  tomaestado_id: 
+  rutum_id: 
+  fecha_inicio: 2015-11-18
+  fecha_fin: 2015-11-18

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151116202944) do
+ActiveRecord::Schema.define(version: 20151118235042) do
 
   create_table "clientes", force: :cascade do |t|
     t.integer  "dni",        limit: 4
@@ -54,6 +54,30 @@ ActiveRecord::Schema.define(version: 20151116202944) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
+
+  create_table "ruta_medidors", force: :cascade do |t|
+    t.integer  "rutum_id",   limit: 4
+    t.integer  "medidor_id", limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "ruta_medidors", ["medidor_id"], name: "index_ruta_medidors_on_medidor_id", using: :btree
+  add_index "ruta_medidors", ["rutum_id"], name: "index_ruta_medidors_on_rutum_id", using: :btree
+
+  create_table "seccion_tomaestado_ruta", force: :cascade do |t|
+    t.integer  "seccion_id",    limit: 4
+    t.integer  "tomaestado_id", limit: 4
+    t.integer  "rutum_id",      limit: 4
+    t.date     "fecha_inicio"
+    t.date     "fecha_fin"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  add_index "seccion_tomaestado_ruta", ["rutum_id"], name: "index_seccion_tomaestado_ruta_on_rutum_id", using: :btree
+  add_index "seccion_tomaestado_ruta", ["seccion_id"], name: "index_seccion_tomaestado_ruta_on_seccion_id", using: :btree
+  add_index "seccion_tomaestado_ruta", ["tomaestado_id"], name: "index_seccion_tomaestado_ruta_on_tomaestado_id", using: :btree
 
   create_table "seccions", force: :cascade do |t|
     t.string   "nombre",         limit: 255
@@ -101,6 +125,11 @@ ActiveRecord::Schema.define(version: 20151116202944) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "medidors", "clientes"
+  add_foreign_key "ruta_medidors", "medidors"
+  add_foreign_key "ruta_medidors", "ruta"
+  add_foreign_key "seccion_tomaestado_ruta", "ruta"
+  add_foreign_key "seccion_tomaestado_ruta", "seccions"
+  add_foreign_key "seccion_tomaestado_ruta", "tomaestados"
   add_foreign_key "seccions", "subestacions"
   add_foreign_key "tomaestados", "users"
 end
