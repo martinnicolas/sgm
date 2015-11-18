@@ -11,15 +11,15 @@
     </div>
   <% end %>
 
-  <%= f.label :codigo, "Código" %>
   <div class="form-group">
-    <div class="col-lg-2">
+    <%= f.label :codigo, "Código", :class => "col-sm-1 control-label" %>
+    <div class="col-sm-2">
       <%= f.text_field :codigo, :class => "form-control", required: true %>
     </div>
   </div>
-  <%= f.label :nombre %>
   <div class="form-group">
-    <div class="col-lg-4">
+    <%= f.label :nombre, :class => "col-sm-1 control-label" %>
+    <div class="col-sm-4">
       <%= f.text_field :nombre, :class => "form-control", required: true %>
     </div>
   </div>

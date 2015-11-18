@@ -11,39 +11,39 @@
     </div>
   <% end %>
 
-  <%= f.label :dni, "DNI" %>
   <div class="form-group">
-    <div class="col-lg-2">
+    <%= f.label :dni, "DNI", :class => "col-sm-1 control-label" %>
+    <div class="col-sm-2">
       <%= f.number_field :dni, :class => "form-control" %>
     </div>
   </div>
-  <%= f.label :apellido %>
   <div class="form-group">
-    <div class="col-lg-4">
+    <%= f.label :apellido, :class => "col-sm-1 control-label" %>
+    <div class="col-sm-4">
       <%= f.text_field :apellido, :class => "form-control" %>
     </div>
   </div>
-  <%= f.label :nombre %>
   <div class="form-group">
-    <div class="col-lg-4">
+    <%= f.label :nombre, :class => "col-sm-1 control-label" %>
+    <div class="col-sm-4">
       <%= f.text_field :nombre, :class => "form-control" %>
     </div>
   </div>
-  <%= f.label :telefono %>
   <div class="form-group">
-    <div class="col-lg-3">
+    <%= f.label :telefono, "Teléfono", :class => "col-sm-1 control-label" %>
+    <div class="col-sm-3">
       <%= f.text_field :telefono, :class => "form-control" %>
     </div>
   </div>
-  <%= f.label :email %>
   <div class="form-group">
-    <div class="col-lg-3">
+    <%= f.label :email, :class => "col-sm-1 control-label" %>
+    <div class="col-sm-3">
       <%= f.text_field :email, :class => "form-control" %>
     </div>
   </div>
-  <%= f.label :domicilio %>
   <div class="form-group">
-    <div class="col-lg-5">
+    <%= f.label :domicilio, :class => "col-sm-1 control-label" %>
+    <div class="col-sm-5">
       <%= f.text_field :domicilio, :class => "form-control" %>
     </div>
   </div>

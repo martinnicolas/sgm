@@ -11,15 +11,15 @@
     </div>
   <% end %>
 
-  <%= f.label :nombre %>
   <div class="form-group">
-    <div class="col-lg-4">
+    <%= f.label :nombre, :class => "col-sm-1 control-label" %>
+    <div class="col-sm-4">
       <%= f.text_field :nombre, :class => "form-control", required: true %>
     </div>
   </div>
-  <%= f.label :subestacion_id, "Subestación" %>
   <div class="form-group">
-    <div class="col-lg-5">
+    <%= f.label :subestacion_id, "Subestación", :class => "col-sm-1 control-label" %>
+    <div class="col-sm-5">
       <%= f.collection_select :subestacion_id, Subestacion.all, :id, :to_s, {prompt: false}, {:class => "form-control"} %>
     </div>
   </div>
