@@ -5,4 +5,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
 	def check_permissions
 		#authorize! :create, resource
 	end
+
+	def index 
+		@users = User.all
+	end 
 end 

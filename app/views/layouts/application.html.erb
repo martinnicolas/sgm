@@ -18,7 +18,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -48,7 +48,7 @@
                   <li><%= link_to 'Editar cuenta', edit_user_registration_path %></li>
                   <li role="separator" class="divider"></li>
                   <li class="dropdown-header">Administración</li>
-                  <li><%= link_to 'Administrar usuarios', edit_user_registration_path %></li>
+                  <li><%= link_to 'Administrar usuarios', users_path %></li>
                   <li role="separator" class="divider"></li>
                   <li><%= link_to "Salir", destroy_user_session_path, method: :delete %></li>
                 </ul>
