@@ -28,7 +28,7 @@ class RutaController < ApplicationController
 
     respond_to do |format|
       if @rutum.save
-        format.html { redirect_to @rutum, notice: 'Rutum was successfully created.' }
+        format.html { redirect_to @rutum, notice: 'Se ha creado una nueva Ruta.' }
         format.json { render :show, status: :created, location: @rutum }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class RutaController < ApplicationController
   def update
     respond_to do |format|
       if @rutum.update(rutum_params)
-        format.html { redirect_to @rutum, notice: 'Rutum was successfully updated.' }
+        format.html { redirect_to @rutum, notice: 'Se ha actualizado la Ruta.' }
         format.json { render :show, status: :ok, location: @rutum }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class RutaController < ApplicationController
   def destroy
     @rutum.destroy
     respond_to do |format|
-      format.html { redirect_to ruta_url, notice: 'Rutum was successfully destroyed.' }
+      format.html { redirect_to ruta_url, notice: 'Se ha eliminado la Ruta.' }
       format.json { head :no_content }
     end
   end

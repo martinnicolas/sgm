@@ -42,15 +42,15 @@ Rutum.create(nombre: 'Ruta 3')
 Role.create(id: 1, name:'administrador')
 Role.create(id: 2, name:'tomaestado')
 
-#Roles_Usuarios
-#RoleUser.create(rol_id: 1, user_id: 1)
-#RoleUser.create(rol_id: 2, user_id: 2)
-#RoleUser.create(rol_id: 2, user_id: 3)
-
 #Usuarios
 #User.create(id: 1, email: 'martin@martin.com', encrypted_password: 'martin')
 #User.create(id: 2, email: 'felipe@martin.com', encrypted_password: 'felipe')
 #User.create(id: 3, email: 'mika@martin.com', encrypted_password: 'mika')
+
+#Roles_Usuarios
+#RolesUser.create(:role_id => 1,:user_id => 1)
+#RolesUser.create(:role_id => 2,:user_id => 2)
+#RolesUser.create(:role_id => 2,:user_id => 3)
 
 #Tomaestados
 #Tomaestado.create(dni: 31343209, apellido: 'Moreno', nombre: 'Felipe', user_id: 2)

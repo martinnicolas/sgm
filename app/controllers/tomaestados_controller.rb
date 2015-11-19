@@ -28,7 +28,7 @@ class TomaestadosController < ApplicationController
 
     respond_to do |format|
       if @tomaestado.save
-        format.html { redirect_to @tomaestado, notice: 'Tomaestado was successfully created.' }
+        format.html { redirect_to @tomaestado, notice: 'Se ha creado un nuevo Tomaestado.' }
         format.json { render :show, status: :created, location: @tomaestado }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class TomaestadosController < ApplicationController
   def update
     respond_to do |format|
       if @tomaestado.update(tomaestado_params)
-        format.html { redirect_to @tomaestado, notice: 'Tomaestado was successfully updated.' }
+        format.html { redirect_to @tomaestado, notice: 'Se ha actualizado el Tomaestado.' }
         format.json { render :show, status: :ok, location: @tomaestado }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class TomaestadosController < ApplicationController
   def destroy
     @tomaestado.destroy
     respond_to do |format|
-      format.html { redirect_to tomaestados_url, notice: 'Tomaestado was successfully destroyed.' }
+      format.html { redirect_to tomaestados_url, notice: 'Se ha eliminado el Tomaestado.' }
       format.json { head :no_content }
     end
   end
