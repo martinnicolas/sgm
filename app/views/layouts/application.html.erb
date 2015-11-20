@@ -48,7 +48,8 @@
                   <li><%= link_to 'Editar cuenta', edit_user_registration_path %></li>
                   <li role="separator" class="divider"></li>
                   <li class="dropdown-header">Administración</li>
-                  <li><%= link_to 'Administrar usuarios', users_path %></li>
+                  <li>
+                    <%= link_to 'Administrar usuarios', users_path %></li>
                   <li role="separator" class="divider"></li>
                   <li><%= link_to "Salir", destroy_user_session_path, method: :delete %></li>
                 </ul>
@@ -60,7 +61,7 @@
   </nav>
   <div class="container">
     <% flash.each do |name, msg| %>
-      <%= content_tag :div, class: "alert alert-#{ name == :error ? "danger" : "success" } alert-dismissable", role: "alert" do %>
+      <%= content_tag :div, class: "alert alert-#{ name == "alert" ? "danger" : "success" } alert-dismissable", role: "alert" do %>
         <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
         <%= msg %>
       <% end %>
