@@ -9,4 +9,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
 	def index 
 		@users = User.all
 	end 
+
+	def show
+	end
+
+	def destroy
+		@user = User.find(user_params[:id])		
+		@user.destroy
+
+		respond_to do |format|
+	      format.html { redirect_to users_url, notice: 'Se ha eliminado el Usuario.' }
+	      format.json { head :no_content }
+	    end		
+	end
 end 

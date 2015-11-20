@@ -1,0 +1,37 @@
+<div class="page-header">
+  <%= link_to new_seccion_tomaestado_rutum_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Seccion tomaestado rutum
+  <% end %>
+  <h4>Listado de rutas asignadas</h4>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Seccion</th>
+            <th>Tomaestado</th>
+            <th>Rutum</th>
+            <th>Fecha inicio</th>
+            <th>Fecha fin</th>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @seccion_tomaestado_ruta) do |seccion_tomaestado_rutum| %>
+            <td><%= seccion_tomaestado_rutum.seccion %></td>
+            <td><%= seccion_tomaestado_rutum.tomaestado %></td>
+            <td><%= seccion_tomaestado_rutum.rutum %></td>
+            <td><%= seccion_tomaestado_rutum.fecha_inicio %></td>
+            <td><%= seccion_tomaestado_rutum.fecha_fin %></td>
+            <td><%= link_to 'Show', seccion_tomaestado_rutum %></td>
+        <td><%= link_to 'Edit', edit_seccion_tomaestado_rutum_path(seccion_tomaestado_rutum) %></td>
+        <td><%= link_to 'Destroy', seccion_tomaestado_rutum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

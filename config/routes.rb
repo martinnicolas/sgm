@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :seccion_tomaestado_ruta
+  resources :ruta_medidors
   resources :medidors
   resources :clientes
   resources :ruta

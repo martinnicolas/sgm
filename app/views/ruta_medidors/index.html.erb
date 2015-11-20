@@ -1,0 +1,31 @@
+<div class="page-header">
+  <%= link_to new_ruta_medidor_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Ruta medidor
+  <% end %>
+  <h1>Listing ruta_medidors</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Rutum</th>
+            <th>Medidor</th>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @ruta_medidors) do |ruta_medidor| %>
+            <td><%= ruta_medidor.rutum %></td>
+            <td><%= ruta_medidor.medidor %></td>
+            <td><%= link_to 'Show', ruta_medidor %></td>
+        <td><%= link_to 'Edit', edit_ruta_medidor_path(ruta_medidor) %></td>
+        <td><%= link_to 'Destroy', ruta_medidor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>
