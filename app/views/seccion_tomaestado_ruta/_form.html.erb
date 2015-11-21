@@ -13,31 +13,31 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :seccion, "Sección", class: "col-sm-2 control-label" %>
+    <%= f.label :seccion_id, "Sección", class: "col-sm-2 control-label" %>
     <div class="col-sm-5">
-      <%= f.collection_select :seccion, Seccion.all, :id, :to_s, {prompt: false}, {:class => "form-control"} %>
+      <%= f.collection_select :seccion_id, Seccion.all, :id, :to_s, {prompt: false}, {:class => "form-control"} %>
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :tomaestado, "Tomaestado", class: "col-sm-2 control-label" %>
+    <%= f.label :tomaestado_id, "Tomaestado", class: "col-sm-2 control-label" %>
     <div class="col-sm-5">
-      <%= f.collection_select :tomaestado, Tomaestado.all, :id, :to_s, {prompt: false}, {:class => "form-control"} %>
+      <%= f.collection_select :tomaestado_id, Tomaestado.all, :id, :to_s, {prompt: false}, {:class => "form-control"} %>
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :rutum, "Ruta", class: "col-sm-2 control-label" %>
+    <%= f.label :rutum_id, "Ruta", class: "col-sm-2 control-label" %>
     <div class="col-sm-5">
-      <%= f.collection_select :rutum, Rutum.all, :id, :to_s, {prompt: false}, {:class => "form-control"} %>
+      <%= f.collection_select :rutum_id, Rutum.all, :id, :to_s, {prompt: false}, {:class => "form-control"} %>
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :fecha_inicio, class: "col-sm-2 control-label" %>
+    <%= f.label :fecha_inicio, "Fecha de inicio", class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
       <%= f.date_select :fecha_inicio, :order => [:day, :month, :year], class: "form-control" %>
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :fecha_fin, class: "col-sm-2 control-label" %>
+    <%= f.label :fecha_fin, "Fecha de finalización", class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
       <%= f.date_select :fecha_fin, :order => [:day, :month, :year], class: "form-control" %>
     </div>

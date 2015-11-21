@@ -1,9 +1,9 @@
-<div class="page-header"><h4>Nuevo tomaestado</h4></div>
-
-<ul class="nav nav-pills">
-	<%= link_to 'Volver', tomaestados_path, :class => "btn btn-primary" %>
-</ul>
-
-<br/>
+<div class="page-header">
+  <%= link_to tomaestados_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Volver
+  <% end %>
+  <h4>Nuevo tomaestado</h4>
+</div>
 
 <%= render 'form' %>

@@ -1,12 +1,12 @@
-<div class="page-header"><h4>Listado de secciones</h4></div>
+<div class="page-header">
+  <%= link_to new_seccion_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    Nueva sección
+  <% end %>
+  <h4>Listado de secciones</h4>
+</div>
 
-<ul class="nav nav-pills">
-  <%= link_to 'Nueva sección', new_seccion_path, :class => "btn btn-primary" %>
-</ul>
-
-<br>
-
-<table class="table table-striped table-bordered">
+<table class="table table-striped table-bordered table-hover">
   <thead>
     <tr>
       <th>Nombre</th>

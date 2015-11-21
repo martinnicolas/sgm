@@ -1,11 +1,14 @@
-<div class="page-header"><h4>Editando subestación</h4></div>
-
-<ul class="nav nav-pills">
-	<li role="presentation"><%= link_to 'Ver', @subestacion %></li>
-	<li role="presentation"><%= link_to 'Volver', subestacions_path %></li>
-</ul>
-
-<br/>
+<div class="page-header">
+  <%= link_to subestacions_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Volver
+  <% end %>
+  <%= link_to @subestacion, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-info-sign"></span>
+    Ver
+  <% end %>
+  <h4>Editando subestación</h4>
+</div>
 
 <%= render 'form' %>
 

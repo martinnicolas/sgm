@@ -1,29 +1,29 @@
 <div class="page-header">
   <%= link_to seccion_tomaestado_ruta_path, class: 'btn btn-default' do %>
     <span class="glyphicon glyphicon-list-alt"></span>
-    Back
+    Volver
   <% end %>
   <%= link_to edit_seccion_tomaestado_rutum_path(@seccion_tomaestado_rutum), class: 'btn btn-primary' do %>
     <span class="glyphicon glyphicon-pencil"></span>
-    Edit
+    Editar
   <% end %>
-  <h1>Show seccion_tomaestado_rutum</h1>
+  <h4>Ruta asignada</h4>
 </div>
 
 <dl class="dl-horizontal">
-  <dt>Seccion:</dt>
-  <dd><%= @seccion_tomaestado_rutum.seccion %></dd>
+  <dt>Sección:</dt>
+  <dd><%= @seccion_tomaestado_rutum.seccion.to_s %></dd>
 
   <dt>Tomaestado:</dt>
-  <dd><%= @seccion_tomaestado_rutum.tomaestado %></dd>
+  <dd><%= @seccion_tomaestado_rutum.tomaestado.to_s %></dd>
 
-  <dt>Rutum:</dt>
-  <dd><%= @seccion_tomaestado_rutum.rutum %></dd>
+  <dt>Ruta:</dt>
+  <dd><%= @seccion_tomaestado_rutum.rutum.to_s %></dd>
 
-  <dt>Fecha inicio:</dt>
+  <dt>Fecha de inicio:</dt>
   <dd><%= @seccion_tomaestado_rutum.fecha_inicio %></dd>
 
-  <dt>Fecha fin:</dt>
+  <dt>Fecha de finalización:</dt>
   <dd><%= @seccion_tomaestado_rutum.fecha_fin %></dd>
 
 </dl>

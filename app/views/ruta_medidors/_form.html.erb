@@ -13,20 +13,20 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :rutum, "Ruta", class: "col-sm-2 control-label" %>
+    <%= f.label :rutum_id, "Ruta", class: "col-sm-2 control-label" %>
     <div class="col-sm-5">
-      <%= f.collection_select :rutum, Rutum.all, :id, :to_s, {prompt: false}, {:class => "form-control"} %>
+      <%= f.collection_select :rutum_id, Rutum.all, :id, :to_s, {prompt: false}, {:class => "form-control"} %>
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :medidor, class: "col-sm-2 control-label" %>
+    <%= f.label :medidor_id, class: "col-sm-2 control-label" %>
     <div class="col-sm-5">
-      <%= f.collection_select :medidor, Medidor.all, :id, :to_s, {prompt: false}, {:class => "form-control"} %>
+      <%= f.collection_select :medidor_id, Medidor.all, :id, :to_s, {prompt: false}, {:class => "form-control"} %>
     </div>
   </div>  
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <%= f.submit class: "btn btn-primary" %>
+      <%= f.submit :value => "Guardar", class: "btn btn-primary" %>
     </div>
   </div>
 <% end %>
