@@ -1,8 +1,8 @@
-<%= form_for(@rutum, html: {role: "form", class: "form-horizontal"}) do |f| %>
+<%= form_for(@rutum, html: { class: "form-horizontal", role: "form" }) do |f| %>
   <% if @rutum.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@rutum.errors.count, "error") %> prohibited this rutum from being saved:</h2>
-
+    <div class="alert alert-danger alert-dismissable" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <h4><%= pluralize(@rutum.errors.count, "error") %> prohibited this rutum from being saved:</h4>
       <ul>
       <% @rutum.errors.full_messages.each do |message| %>
         <li><%= message %></li>

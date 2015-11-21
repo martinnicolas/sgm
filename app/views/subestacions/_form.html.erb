@@ -2,8 +2,7 @@
   <% if @subestacion.errors.any? %>
     <div class="alert alert-danger alert-dismissable" role="alert">
       <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-      <h4><%= pluralize(@seccion_tomaestado_rutum.errors.count, "error") %> prohibited this seccion_tomaestado_rutum from being saved:</h4>
-
+      <h4><%= pluralize(@subestacion.errors.count, "error") %> prohibited this subestacion from being saved:</h4>
       <ul>
       <% @subestacion.errors.full_messages.each do |message| %>
         <li><%= message %></li>
