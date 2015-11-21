@@ -12,28 +12,32 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :dni, "DNI", :class => "col-sm-1 control-label" %>
+    <%= f.label :dni, "DNI", class: "col-sm-1 control-label" %>
     <div class="col-sm-2">
-      <%= f.number_field :dni, :class => "form-control", required: true %>
+      <%= f.number_field :dni, class: "form-control", required: true %>
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :apellido, :class => "col-sm-1 control-label" %>
+    <%= f.label :apellido, class: "col-sm-1 control-label" %>
     <div class="col-sm-4">
-      <%= f.text_field :apellido, :class => "form-control", required: true %>
+      <%= f.text_field :apellido, class: "form-control", required: true %>
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :nombre, "Nombres", :class => "col-sm-1 control-label" %>
+    <%= f.label :nombre, "Nombres", class: "col-sm-1 control-label" %>
     <div class="col-sm-4">
-      <%= f.text_field :nombre, :class => "form-control", required: true %>
+      <%= f.text_field :nombre, class: "form-control", required: true %>
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :user_id, "Usuario", :class => "col-sm-1 control-label" %>
+    <%= f.label :user_id, "Usuario", class: "col-sm-1 control-label" %>
     <div class="col-sm-3">
       <%= f.collection_select :user_id, User.all, :id, :to_s, {prompt: false}, {:class => "form-control"} %>
     </div>
   </div>
-  <%= f.submit :value => "Guardar", :class => "btn btn-primary"%>
+  <div class="form-group">
+    <div class="col-sm-offset-1 col-sm-10">
+      <%= f.submit value: "Guardar", class: "btn btn-primary" %>
+    </div>
+  </div>
 <% end %>
