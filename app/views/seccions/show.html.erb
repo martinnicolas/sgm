@@ -1,19 +1,21 @@
-<div class="page-header"><h4>Sección</h4></div>
+<div class="page-header">
+  <%= link_to seccions_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Volver
+  <% end %>
+  <%= link_to edit_seccion_path(@seccion), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Editar
+  <% end %>
+  <h4>Sección</h4>
+</div>
 
-<ul class="nav nav-pills">
-	<li role="presentation"><%= link_to 'Editar', edit_seccion_path(@seccion) %></li>
-	<li role="presentation"><%= link_to 'Volver', seccions_path %></li>
-</ul>
+<dl class="dl-horizontal">
+  <dt>Nombre:</dt>
+  <dd><%= @seccion.nombre %></dd>
 
-<br/>
+  <dt>Subestacion:</dt>
+  <dd><%= @seccion.subestacion %></dd>
+</dl>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @seccion.nombre %>
-</p>
-
-<p>
-  <strong>Subestacion:</strong>
-  <%= @seccion.subestacion %>
-</p>
 

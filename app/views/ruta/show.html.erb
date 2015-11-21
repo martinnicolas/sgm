@@ -1,13 +1,16 @@
-<div class="page-header"><h4>Ruta</h4></div>
+<div class="page-header">
+  <%= link_to ruta_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Volver
+  <% end %>
+  <%= link_to edit_rutum_path(@rutum), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Editar
+  <% end %>
+  <h4>Ruta</h4>
+</div>
 
-<ul class="nav nav-pills">
-	<li role="presentation"><%= link_to 'Editar', edit_rutum_path(@rutum) %></li>
-	<li role="presentation"><%= link_to 'Volver', ruta_path %></li>
-</ul>
-
-<br/>
-
-<p>
-  <strong>Nombre:</strong>
-  <%= @rutum.nombre %>
-</p>
+<dl class="dl-horizontal">
+  <dt>Nombre:</dt>
+  <dd><%= @rutum.nombre %></dd>
+</dl>

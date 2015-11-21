@@ -1,43 +1,34 @@
-<div class="page-header"><h4>Medidor</h4></div>
+<div class="page-header">
+  <%= link_to medidors_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Volver
+  <% end %>
+  <%= link_to edit_medidor_path(@medidor), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Editar
+  <% end %>
+  <h4>Medidor</h4>
+</div>
 
-<ul class="nav nav-pills">
-  <li role="presentation"><%= link_to 'Editar', edit_medidor_path(@medidor) %></li>
-  <li role="presentation"><%= link_to 'Volver', medidors_path %></li>
-</ul>
+<dl class="dl-horizontal">
+  <dt>Número:</dt>
+  <dd><%= @medidor.numero %></dd>
 
-<br/>
+  <dt>Nombre:</dt>
+  <dd><%= @medidor.nombre %></dd>
 
-<p>
-  <strong>Numero:</strong>
-  <%= @medidor.numero %>
-</p>
+  <dt>Novedades:</dt>
+  <dd><%= @medidor.novedades %></dd>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @medidor.nombre %>
-</p>
+  <dt>Novedades críticas:</dt>
+  <dd><%= @medidor.novedades_criticas %></dd>
 
-<p>
-  <strong>Novedades:</strong>
-  <%= @medidor.novedades %>
-</p>
+  <dt>Latitud:</dt>
+  <dd><%= @medidor.latitud %></dd>
 
-<p>
-  <strong>Novedades criticas:</strong>
-  <%= @medidor.novedades_criticas %>
-</p>
+  <dt>Longitud:</dt>
+  <dd><%= @medidor.longitud %></dd>
 
-<p>
-  <strong>Latitud:</strong>
-  <%= @medidor.latitud %>
-</p>
-
-<p>
-  <strong>Longitud:</strong>
-  <%= @medidor.longitud %>
-</p>
-
-<p>
-  <strong>Cliente:</strong>
-  <%= @medidor.cliente %>
-</p>
+  <dt>Cliente:</dt>
+  <dd><%= @medidor.cliente %></dd>
+</dl>

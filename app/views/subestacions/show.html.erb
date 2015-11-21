@@ -1,19 +1,20 @@
-<div class="page-header"><h4>Subestación</h4></div>
+<div class="page-header">
+  <%= link_to subestacions_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Volver
+  <% end %>
+  <%= link_to edit_subestacion_path(@subestacion), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Editar
+  <% end %>
+  <h4>Subestación</h4>
+</div>
 
-<ul class="nav nav-pills">
-	<li role="presentation"><%= link_to 'Editar', edit_subestacion_path(@subestacion) %></li>
-	<li role="presentation"><%= link_to 'Volver', subestacions_path %></li>
-</ul>
+<dl class="dl-horizontal">
+  <dt>Código:</dt>
+  <dd><%= @subestacion.codigo %></dd>
 
-<br/>
-
-<p>
-  <strong>Código:</strong>
-  <%= @subestacion.codigo %>
-</p>
-
-<p>
-  <strong>Nombre:</strong>
-  <%= @subestacion.nombre %>
-</p>
+  <dt>Nombre:</dt>
+  <dd><%= @subestacion.nombre %></dd>
+</dl>
 

@@ -1,28 +1,25 @@
-<div class="page-header"><h4>Tomaestado</h4></div>
+<div class="page-header">
+  <%= link_to tomaestados_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Volver
+  <% end %>
+  <%= link_to edit_tomaestado_path(@tomaestado), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Editar
+  <% end %>
+  <h4>Tomaestado</h4>
+</div>
 
-<ul class="nav nav-pills">
-	<%= link_to 'Editar', edit_tomaestado_path(@tomaestado), :class => "btn btn-primary" %>
-	<%= link_to 'Volver', tomaestados_path, :class => "btn btn-primary" %>
-</ul>
+<dl class="dl-horizontal">
+  <dt>DNI:</dt>
+  <dd><%= @tomaestado.dni %></dd>
 
-<br/>
+  <dt>Apellido:</dt>
+  <dd><%= @tomaestado.apellido %></dd>
 
-<p>
-  <strong>DNI:</strong>
-  <%= @tomaestado.dni %>
-</p>
+  <dt>Nombre:</dt>
+  <dd><%= @tomaestado.nombre %></dd>
 
-<p>
-  <strong>Apellido:</strong>
-  <%= @tomaestado.apellido %>
-</p>
-
-<p>
-  <strong>Nombre:</strong>
-  <%= @tomaestado.nombre %>
-</p>
-
-<p>
-  <strong>Usuario:</strong>
-  <%= @tomaestado.user %>
-</p>
+  <dt>Usuario:</dt>
+  <dd><%= @tomaestado.user %></dd>
+</div>
