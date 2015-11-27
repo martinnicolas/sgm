@@ -1,3 +1,16 @@
+<div id="map">
+  <%= 
+  map(:center => {
+    :latlng => [-43.296164, -65.090322],
+    :zoom => 14
+  },
+  :markers => [
+    {
+       :latlng => [-43.296164, -65.090322],
+       :popup => "yo (martín)"
+    }
+  ]) %>
+</div>
 
 <div class="page-header">
   <%= link_to ruta_path, class: 'btn btn-default' do %>
