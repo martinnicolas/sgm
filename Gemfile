@@ -25,6 +25,13 @@ gem 'bootstrap-generators', :git => 'git://github.com/decioferreira/bootstrap-ge
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+
+gem 'jquery-ui-rails'
+
+gem 'jquery_datepicker', github: 'foodforarabbit/jquery_datepicker'
+
+gem 'geokit-rails'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

@@ -28,7 +28,7 @@ class SeccionTomaestadoRutaController < ApplicationController
 
     respond_to do |format|
       if @seccion_tomaestado_rutum.save
-        format.html { redirect_to @seccion_tomaestado_rutum, notice: 'Seccion tomaestado rutum was successfully created.' }
+        format.html { redirect_to @seccion_tomaestado_rutum, notice: 'Se ha asignado una nueva ruta.' }
         format.json { render :show, status: :created, location: @seccion_tomaestado_rutum }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class SeccionTomaestadoRutaController < ApplicationController
   def update
     respond_to do |format|
       if @seccion_tomaestado_rutum.update(seccion_tomaestado_rutum_params)
-        format.html { redirect_to @seccion_tomaestado_rutum, notice: 'Seccion tomaestado rutum was successfully updated.' }
+        format.html { redirect_to @seccion_tomaestado_rutum, notice: 'Se ha actualizado la ruta asignada.' }
         format.json { render :show, status: :ok, location: @seccion_tomaestado_rutum }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class SeccionTomaestadoRutaController < ApplicationController
   def destroy
     @seccion_tomaestado_rutum.destroy
     respond_to do |format|
-      format.html { redirect_to seccion_tomaestado_ruta_url, notice: 'Seccion tomaestado rutum was successfully destroyed.' }
+      format.html { redirect_to seccion_tomaestado_ruta_url, notice: 'Se ha eliminado la asignación.' }
       format.json { head :no_content }
     end
   end
