@@ -10,6 +10,29 @@ class RutaController < ApplicationController
   # GET /ruta/1
   # GET /ruta/1.json
   def show
+    @medidores = Medidor.all
+    @geojson = Array.new
+
+    @medidores.each do |medidor|
+      @geojson << {
+        type: 'Feature',
+        geometry: {
+          type: 'Point',
+          coordinates: [medidor.longitud, medidor.latitud]
+        },
+        properties: {
+          name: medidor.nombre,
+          :'marker-color' => '#00607d',
+          :'marker-symbol' => 'circle',
+          :'marker-size' => 'medium'
+        }
+      }
+    end
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @geojson }  # respond with the created JSON object
+    end
   end
 
   # GET /ruta/new
