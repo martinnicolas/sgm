@@ -11,7 +11,20 @@
 </div>
 
 <div id="map"></div>
+<script>
 
+$(document).on("ready", function() {
+  L.mapbox.accessToken = 'pk.eyJ1IjoibWFydGluY2hvIiwiYSI6ImZlMTY1MzUwMjQ5MGQ3YjgyY2NkYTU2MzJiZWIyMWRiIn0.Yhwbui6KvzC0JziPkwWXuQ';
+  var userMap = L.mapbox.map('map', 'martincho.nb477913')
+    .addControl(L.mapbox.geocoderControl('mapbox.places'));
+  var featureLayer = L.mapbox.featureLayer().loadURL('http://localhost:3000/ruta/1.json').addTo(userMap)
+  console.log(featureLayer);
+  // getTrailPoints(userMap);
+  featureLayer.on('ready', function(){
+    userMap.fitBounds(featureLayer.getBounds());
+  });
+});
+</script>
 <br/>
 
 <dl class="dl-horizontal">
