@@ -14,7 +14,7 @@
 
 <div class="panel panel-default">
   <!-- Default panel contents -->
-  <div class="panel-heading"><strong>Medidores que se encuentran en la ruta: </strong></div>
+  <div class="panel-heading"><strong>Datos de la ruta</strong></div>
   <div class="panel-body">
     <dl class="dl-horizontal">
       <dt>Nombre:</dt>
@@ -23,33 +23,29 @@
   </div>
 
   <table class="table table-striped table-bordered table-hover">
-    <thead>
+  <thead>
+    <tr>
+      <th>Medidor</th>
+      <th>Cliente</th>
+      <th>Latitud</th>
+      <th>Longitud</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @medidores.each do |medidor| %>
       <tr>
-        <th>Medidor</th>
+        <td><%= medidor.nombre %></td>
+        <td><%= Cliente.find(medidor.cliente_id).to_s %></td>
+        <td><%= medidor.latitud %></td>
+        <td><%= medidor.longitud %></td>
       </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>...</td>
-      </tr>  
-      <tr>
-        <td>...</td>
-      </tr>  
-      <tr>
-        <td>...</td>
-      </tr>  
-      <tr>
-        <td>...</td>
-      </tr>  
-      <tr>
-        <td>...</td>
-      </tr>      
-    </tbody>
+    <% end %>
+  </tbody>
   </table>
 </div>
 
 <script>
-  $(document).on("ready", function() {
+  /*$(document).on("ready", function() {
     L.mapbox.accessToken = 'pk.eyJ1IjoibWFydGluY2hvIiwiYSI6ImZlMTY1MzUwMjQ5MGQ3YjgyY2NkYTU2MzJiZWIyMWRiIn0.Yhwbui6KvzC0JziPkwWXuQ';
     var userMap = L.mapbox.map('map', 'martincho.nb477913').addControl(L.mapbox.geocoderControl('mapbox.places'))
     var featureLayer = L.mapbox.featureLayer().loadURL('http://localhost:3000/ruta/1.json').addTo(userMap)
@@ -58,6 +54,6 @@
     featureLayer.on('ready', function(){
       userMap.fitBounds(featureLayer.getBounds());
     });
-  });
+  });*/
 </script>
 

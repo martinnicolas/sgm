@@ -1,3 +1,7 @@
+<div id='map'></div>
+
+<br/>
+
 <%= form_for(@rutum, html: { class: "form-horizontal", role: "form" }) do |f| %>
   <% if @rutum.errors.any? %>
     <div class="alert alert-danger alert-dismissable" role="alert">
@@ -23,3 +27,10 @@
     </div>
   </div>
 <% end %>
+
+<script>
+  $(document).on("ready", function() {
+    L.mapbox.accessToken = 'pk.eyJ1IjoibWFydGluY2hvIiwiYSI6ImZlMTY1MzUwMjQ5MGQ3YjgyY2NkYTU2MzJiZWIyMWRiIn0.Yhwbui6KvzC0JziPkwWXuQ';
+    var userMap = L.mapbox.map('map', 'martincho.nb477913')
+  });
+</script>

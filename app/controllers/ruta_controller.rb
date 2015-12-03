@@ -10,9 +10,10 @@ class RutaController < ApplicationController
   # GET /ruta/1
   # GET /ruta/1.json
   def show
-    @medidores = Medidor.all
+    @medidor_ids = RutaMedidor.where(:rutum_id => params[:id]).ids
+    @medidores = Medidor.find(@medidor_ids)
+    
     @geojson = Array.new
-
     @medidores.each do |medidor|
       @geojson << {
         type: 'Feature',
@@ -22,6 +23,7 @@ class RutaController < ApplicationController
         },
         properties: {
           name: medidor.nombre,
+          address: Cliente.find(medidor.cliente_id).domicilio,
           :'marker-color' => '#00607d',
           :'marker-symbol' => 'circle',
           :'marker-size' => 'medium'
@@ -30,7 +32,7 @@ class RutaController < ApplicationController
     end
 
     respond_to do |format|
-      format.html
+      format.html 
       format.json { render json: @geojson }  # respond with the created JSON object
     end
   end
