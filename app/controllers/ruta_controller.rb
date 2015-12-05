@@ -13,28 +13,33 @@ class RutaController < ApplicationController
     @medidor_ids = RutaMedidor.where(:rutum_id => params[:id]).ids
     @medidores = Medidor.find(@medidor_ids)
     
-    @geojson = Array.new
+    @array_json = Array.new
     @medidores.each do |medidor|
-      @geojson << {
+      @array_json << {
         type: 'Feature',
         geometry: {
           type: 'Point',
           coordinates: [medidor.longitud, medidor.latitud]
         },
         properties: {
+          title: medidor.nombre,
+          description: Cliente.find(medidor.cliente_id).domicilio,
           name: medidor.nombre,
           address: Cliente.find(medidor.cliente_id).domicilio,
           :'marker-color' => '#00607d',
-          :'marker-symbol' => 'circle',
+          :'marker-symbol' => 'polling-place',
           :'marker-size' => 'medium'
         }
       }
     end
+    @geojson = @array_json.to_json
 
-    respond_to do |format|
-      format.html 
-      format.json { render json: @geojson }  # respond with the created JSON object
-    end
+    #debugger
+
+    #respond_to do |format|
+    #  format.html 
+      #format.json { render json: @geojson }  # respond with the created JSON object
+    #end
   end
 
   # GET /ruta/new

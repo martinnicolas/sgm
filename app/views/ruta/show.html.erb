@@ -45,11 +45,12 @@
 </div>
 
 <script>
-  $(document).on("ready", function() {
+  $(document).on('page:load ready', function() {
     L.mapbox.accessToken = 'pk.eyJ1IjoibWFydGluY2hvIiwiYSI6ImZlMTY1MzUwMjQ5MGQ3YjgyY2NkYTU2MzJiZWIyMWRiIn0.Yhwbui6KvzC0JziPkwWXuQ';
-    var userMap = L.mapbox.map('map', 'martincho.nb477913')
-    var featureLayer = L.mapbox.featureLayer().loadURL('http://localhost:3000/ruta/<%= params[:id] %>.json').addTo(userMap)
-    console.log(featureLayer);    
+    var userMap = L.mapbox.map('map', 'martincho.nb477913');
+    var featureLayer = L.mapbox.featureLayer().setGeoJSON(<%= raw @geojson %>).addTo(userMap);
+    userMap.remove();
+    //console.log(featureLayer);    
     //getTrailPoints(userMap);
 
     /*Ajusto el mapa a los marcadores*/
@@ -57,7 +58,7 @@
       userMap.fitBounds(featureLayer.getBounds());
     });*/
 
-    featureLayer.on('layeradd', function(e) {
+    /*featureLayer.on('layeradd', function(e) {
       var marker, popupContent, properties;
       marker = e.layer;
       properties = marker.feature.properties;
@@ -75,7 +76,7 @@
       var current, currentlyClickedName;
       current = $(this);
       return currentlyClickedName = current.find('h2').text();
-    });
+    });*/
   });
 </script>
 
