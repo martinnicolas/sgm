@@ -1,4 +1,10 @@
 <div id='map'></div>
+<div id='inputs'></div>
+<div id='errors'></div>
+<div id='directions'>
+  <div id='routes'></div>
+  <div id='instructions'></div>
+</div>
 
 <br/>
 
@@ -31,34 +37,28 @@
 <script>
   $(document).on("ready", function() {
     L.mapbox.accessToken = 'pk.eyJ1IjoibWFydGluY2hvIiwiYSI6ImZlMTY1MzUwMjQ5MGQ3YjgyY2NkYTU2MzJiZWIyMWRiIn0.Yhwbui6KvzC0JziPkwWXuQ';
-    var userMap = L.mapbox.map('map', 'martincho.nb477913')
-    var featureLayer = L.mapbox.featureLayer().loadURL('http://localhost:3000/ruta/<%= params[:id] %>.json').addTo(userMap)
-    console.log(featureLayer);    
-    //getTrailPoints(userMap);
+var map = L.mapbox.map('map', 'martincho.nb477913');
 
-    /*Ajusto el mapa a los marcadores*/
-    /*featureLayer.on('ready', function(){
-      userMap.fitBounds(featureLayer.getBounds());
-    });*/
+// move the attribution control out of the way
+map.attributionControl.setPosition('bottomleft');
 
-    featureLayer.on('layeradd', function(e) {
-      var marker, popupContent, properties;
-      marker = e.layer;
-      properties = marker.feature.properties;
-      popupContent = '<div class="popup">' + 
-                      '<h3><b>' + properties.name + '</b></h3>' + 
-                      '<p>' + properties.address + '</p>' + 
-                     '</div>';
-      return marker.bindPopup(popupContent, {
-        closeButton: false,
-        minWidth: 200
-      });
-    });
+// create the initial directions object, from which the layer
+// and inputs will pull data.
+var directions = L.mapbox.directions();
 
-    $('article li').click(function(e) {
-      var current, currentlyClickedName;
-      current = $(this);
-      return currentlyClickedName = current.find('h2').text();
-    });
+var directionsLayer = L.mapbox.directions.layer(directions)
+    .addTo(map);
+
+var directionsInputControl = L.mapbox.directions.inputControl('inputs', directions)
+    .addTo(map);
+
+var directionsErrorsControl = L.mapbox.directions.errorsControl('errors', directions)
+    .addTo(map);
+
+var directionsRoutesControl = L.mapbox.directions.routesControl('routes', directions)
+    .addTo(map);
+
+var directionsInstructionsControl = L.mapbox.directions.instructionsControl('instructions', directions)
+    .addTo(map);
   });
 </script>

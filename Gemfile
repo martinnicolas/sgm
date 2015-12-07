@@ -32,7 +32,7 @@ gem 'jquery_datepicker', github: 'foodforarabbit/jquery_datepicker'
 
 gem 'geokit-rails'
 
-gem 'mapbox-rails'
+gem 'mapbox-rails', '~> 1.6', '>= 1.6.1.1'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
