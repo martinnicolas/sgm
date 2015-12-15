@@ -49,33 +49,6 @@
     L.mapbox.accessToken = 'pk.eyJ1IjoibWFydGluY2hvIiwiYSI6ImZlMTY1MzUwMjQ5MGQ3YjgyY2NkYTU2MzJiZWIyMWRiIn0.Yhwbui6KvzC0JziPkwWXuQ';
     var userMap = L.mapbox.map('map', 'martincho.nb477913');
     var featureLayer = L.mapbox.featureLayer().setGeoJSON(<%= raw @geojson.to_json %>).addTo(userMap);
-    //console.log(featureLayer);    
-    //getTrailPoints(userMap);
-
-    /*Ajusto el mapa a los marcadores*/
-    /*featureLayer.on('ready', function(){
-      userMap.fitBounds(featureLayer.getBounds());
-    });*/
-
-    /*featureLayer.on('layeradd', function(e) {
-      var marker, popupContent, properties;
-      marker = e.layer;
-      properties = marker.feature.properties;
-      popupContent = '<div class="popup">' + 
-                      '<h3><b>' + properties.name + '</b></h3>' + 
-                      '<p>' + properties.address + '</p>' + 
-                     '</div>';
-      return marker.bindPopup(popupContent, {
-        closeButton: false,
-        minWidth: 200
-      });
-    });
-
-    $('article li').click(function(e) {
-      var current, currentlyClickedName;
-      current = $(this);
-      return currentlyClickedName = current.find('h2').text();
-    });*/
   });
 </script>
 
