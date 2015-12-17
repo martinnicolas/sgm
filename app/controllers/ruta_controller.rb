@@ -7,6 +7,12 @@ class RutaController < ApplicationController
     @ruta = Rutum.all
   end
 
+  def store_route     
+    server[:ruta] = params[:points]
+    puts "points = "
+    puts params[:points]
+  end
+
   # GET /ruta/1
   # GET /ruta/1.json
   def show
@@ -46,8 +52,11 @@ class RutaController < ApplicationController
   # POST /ruta
   # POST /ruta.json
   def create
-    @rutum = Rutum.new(rutum_params)
 
+    rutum_params[:ruta] = session[:ruta]
+    debugger
+    @rutum = Rutum.new(rutum_params)
+    
     respond_to do |format|
       if @rutum.save
         format.html { redirect_to @rutum, notice: 'Se ha creado una nueva Ruta.' }

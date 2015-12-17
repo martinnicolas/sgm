@@ -68,6 +68,7 @@
             });
             polyline.setLatLngs(route);
         });
+        $.post('/ruta/store_route',points);
     }
   });
 </script>
