@@ -8,9 +8,8 @@ class RutaController < ApplicationController
   end
 
   def store_route     
-    server[:ruta] = params[:points]
-    puts "points = "
-    puts params[:points]
+    session[:ruta] = params[:ruta]
+    render :nothing => true
   end
 
   # GET /ruta/1
@@ -53,7 +52,7 @@ class RutaController < ApplicationController
   # POST /ruta.json
   def create
 
-    rutum_params[:ruta] = session[:ruta]
+    rutum_params[:ruta] = session[:ruta]    
     debugger
     @rutum = Rutum.new(rutum_params)
     

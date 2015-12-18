@@ -67,8 +67,10 @@
                 return [point[1], point[0]];
             });
             polyline.setLatLngs(route);
-        });
-        $.post('/ruta/store_route',points);
+        }); 
+        ruta = {"ruta": {"first_name": "Jeff", "last_name": "Smith"}}
+        $.post('/ruta/store_route',ruta);        
+        console.log(ruta);        
     }
   });
 </script>
