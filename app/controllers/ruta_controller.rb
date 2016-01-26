@@ -32,7 +32,7 @@ class RutaController < ApplicationController
           name: medidor.nombre,
           address: Cliente.find(medidor.cliente_id).domicilio,
           :'marker-color' => '#00607d',
-          :'marker-symbol' => 'polling-place',
+          :'marker-symbol' => 'circle-stroked',
           :'marker-size' => 'medium'
         }
       }
@@ -55,6 +55,9 @@ class RutaController < ApplicationController
     rutum_params[:ruta] = session[:ruta]    
     debugger
     @rutum = Rutum.new(rutum_params)
+    ruta_medidor_params[:ruta_id] = @rutum.id
+    
+    @ruta_medidor = new RutaMedidor(ruta_medidor_params)
     
     respond_to do |format|
       if @rutum.save
@@ -70,6 +73,7 @@ class RutaController < ApplicationController
   # PATCH/PUT /ruta/1
   # PATCH/PUT /ruta/1.json
   def update
+    rutum_params[:ruta] = session[:ruta]    
     respond_to do |format|
       if @rutum.update(rutum_params)
         format.html { redirect_to @rutum, notice: 'Se ha actualizado la Ruta.' }

@@ -10,7 +10,7 @@
   <h4>Ruta</h4>
 </div>
 
-<div id="map"></div>
+<div id="map-show"></div>
 
 <div class="panel panel-default">
   <!-- Default panel contents -->
@@ -47,7 +47,7 @@
 <script>
   $(document).on('ready', function() {
     L.mapbox.accessToken = 'pk.eyJ1IjoibWFydGluY2hvIiwiYSI6ImZlMTY1MzUwMjQ5MGQ3YjgyY2NkYTU2MzJiZWIyMWRiIn0.Yhwbui6KvzC0JziPkwWXuQ';
-    var userMap = L.mapbox.map('map', 'martincho.nb477913');
+    var userMap = L.mapbox.map('map-show', 'martincho.nb477913');
     L.mapbox.featureLayer().setGeoJSON(<%= raw @geojson.to_json %>).addTo(userMap);
   });
 </script>

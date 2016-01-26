@@ -2,6 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#map {
+#map-edit {
 	height: 500px;
+	position:absolute;
+	top:0;
+	bottom:0; 
+	width:100%; 
+}
+
+#map-show{
+	height: 500px;
+}
+
+#boton {
+  	position:absolute;
+  	top:10px;
+  	right:10px;
+  	z-index:1000;
 }

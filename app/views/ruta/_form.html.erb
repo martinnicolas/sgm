@@ -1,4 +1,8 @@
-<div id='map'></div>
+<div style="height: 500px; position:relative;">
+<div id='map-edit'>
+</div>
+<button id='boton' class='btn btn-primary'>Limpiar mapa</button>
+</div>
 
 <br/>
 
@@ -29,9 +33,9 @@
 <% end %>
 
 <script>
-  $(document).on('ready', function() {    
+  $(document).on('page:load', function() {    
     L.mapbox.accessToken = 'pk.eyJ1IjoibWFydGluY2hvIiwiYSI6ImZlMTY1MzUwMjQ5MGQ3YjgyY2NkYTU2MzJiZWIyMWRiIn0.Yhwbui6KvzC0JziPkwWXuQ';
-    var map = L.mapbox.map('map', 'martincho.nb477913')
+    var map = L.mapbox.map('map-edit', 'martincho.nb477913')
     map.on('click', function(e) {
         // Let's add a callback to makeMarker so that it can draw the route only
         // *after* it's done processing the marker adding.
@@ -68,9 +72,25 @@
             });
             polyline.setLatLngs(route);
         }); 
-        ruta = {"ruta": {"first_name": "Jeff", "last_name": "Smith"}}
+        var ruta = points;
         $.post('/ruta/store_route',ruta);        
-        console.log(ruta);        
+        console.log(points);        
+    }
+
+    // Wait until the markers are loaded, so we know that `map.featureLayer.eachLayer`
+    // will actually go over each marker.
+    map.featureLayer.on('ready', function(e) {
+      document.getElementById('boton').onclick = clickButton;
+    });
+
+    function clickButton() {
+      map.featureLayer.eachLayer(function(marker) {
+        // You can replace this test for anything else, to choose the right
+        // marker on which to open a popup. by default, popups are exclusive
+        // so opening a new one will close all of the others.
+        if (confirm("Esta seguro que desea continuar?"))
+          alert("TODO: Remove all markers");
+      });
     }
   });
 </script>

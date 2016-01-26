@@ -1,6 +1,11 @@
 class MedidorsController < ApplicationController
   before_action :set_medidor, only: [:show, :edit, :update, :destroy]
 
+  def store_route     
+    session[:medidor] = params[:medidor]
+    render :nothing => true
+  end
+
   # GET /medidors
   # GET /medidors.json
   def index
