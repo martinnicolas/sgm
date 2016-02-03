@@ -1,7 +1,9 @@
+require 'json'
+
 class MedidorsController < ApplicationController
   before_action :set_medidor, only: [:show, :edit, :update, :destroy]
 
-  def store_route     
+  def store_medidor     
     session[:medidor] = params[:medidor]
     render :nothing => true
   end
@@ -29,6 +31,8 @@ class MedidorsController < ApplicationController
   # POST /medidors
   # POST /medidors.json
   def create
+    medidor_location = JSON.parse(session[:medidor])
+    debugger
     @medidor = Medidor.new(medidor_params)
 
     respond_to do |format|

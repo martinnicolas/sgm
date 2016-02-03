@@ -1,4 +1,4 @@
-<div id='map-show'></div>
+<div id='map-medidor'></div>
 
 <br/>
 
@@ -65,9 +65,9 @@
 <% end %>
 
 <script>
-  $(document).on('ready', function() {    
+  $(document).on('page:load', function() {    
     L.mapbox.accessToken = 'pk.eyJ1IjoibWFydGluY2hvIiwiYSI6ImZlMTY1MzUwMjQ5MGQ3YjgyY2NkYTU2MzJiZWIyMWRiIn0.Yhwbui6KvzC0JziPkwWXuQ';
-    var map = L.mapbox.map('map-show', 'martincho.nb477913')
+    var map = L.mapbox.map('map-medidor', 'martincho.nb477913')
     map.on('click', function(e) {
         // Let's add a callback to makeMarker so that it can draw the route only
         // *after* it's done processing the marker adding.
