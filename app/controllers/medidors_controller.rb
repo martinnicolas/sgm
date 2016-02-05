@@ -31,9 +31,11 @@ class MedidorsController < ApplicationController
   # POST /medidors
   # POST /medidors.json
   def create
-    medidor_location = JSON.parse(session[:medidor])
-    debugger
+    medidor_location = session[:medidor]    
     @medidor = Medidor.new(medidor_params)
+    @medidor.latitud = medidor_location['latitud']
+    @medidor.longitud = medidor_location['longitud']
+    @medidor.save
 
     respond_to do |format|
       if @medidor.save

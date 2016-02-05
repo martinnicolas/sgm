@@ -79,7 +79,7 @@
       var marker = L.marker(e.latlng, { draggable: true }).addTo(map);
       markers.push(marker);
       var latlng = marker._latlng;
-      medidor = {medidor: {"latitud": latlng.lat, longitud: latlng.lng}}
+      var medidor = { medidor: { latitud: latlng.lat, longitud: latlng.lng } }
       $.post('/medidors/store_medidor',medidor);  
     }              
   });
