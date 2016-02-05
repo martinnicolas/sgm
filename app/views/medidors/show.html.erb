@@ -10,25 +10,41 @@
   <h4>Medidor</h4>
 </div>
 
-<dl class="dl-horizontal">
-  <dt>Número:</dt>
-  <dd><%= @medidor.numero %></dd>
+<div id="medidor-show"></div>
 
-  <dt>Nombre:</dt>
-  <dd><%= @medidor.nombre %></dd>
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><strong>Datos del medidor</strong></div>
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      <dt>Número:</dt>
+      <dd><%= @medidor.numero %></dd>
 
-  <dt>Novedades:</dt>
-  <dd><%= @medidor.novedades %></dd>
+      <dt>Nombre:</dt>
+      <dd><%= @medidor.nombre %></dd>
 
-  <dt>Novedades críticas:</dt>
-  <dd><%= @medidor.novedades_criticas %></dd>
+      <dt>Novedades:</dt>
+      <dd><%= @medidor.novedades %></dd>
 
-  <dt>Latitud:</dt>
-  <dd><%= @medidor.latitud %></dd>
+      <dt>Novedades críticas:</dt>
+      <dd><%= @medidor.novedades_criticas %></dd>
 
-  <dt>Longitud:</dt>
-  <dd><%= @medidor.longitud %></dd>
+      <dt>Latitud:</dt>
+      <dd><%= @medidor.latitud %></dd>
 
-  <dt>Cliente:</dt>
-  <dd><%= @medidor.cliente %></dd>
-</dl>
+      <dt>Longitud:</dt>
+      <dd><%= @medidor.longitud %></dd>
+
+      <dt>Cliente:</dt>
+      <dd><%= @medidor.cliente %></dd>
+    </dl>
+  </div>
+</div>
+
+<script>
+  $(document).on('page:load', function() {
+    L.mapbox.accessToken = 'pk.eyJ1IjoibWFydGluY2hvIiwiYSI6ImZlMTY1MzUwMjQ5MGQ3YjgyY2NkYTU2MzJiZWIyMWRiIn0.Yhwbui6KvzC0JziPkwWXuQ';
+    var userMap = L.mapbox.map('medidor-show', 'martincho.nb477913');
+    L.mapbox.featureLayer().setGeoJSON(<%= raw @geojson.to_json %>).addTo(userMap);
+  });
+</script>

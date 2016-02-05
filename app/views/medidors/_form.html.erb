@@ -40,18 +40,6 @@
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :latitud, class: "col-sm-2 control-label" %>
-    <div class="col-sm-4">
-      <%= f.text_field :latitud, class: "form-control" %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :longitud, class: "col-sm-2 control-label" %>
-    <div class="col-sm-4">
-      <%= f.text_field :longitud, class: "form-control" %>
-    </div>
-  </div>
-  <div class="form-group">
     <%= f.label :cliente_id, "Cliente", class: "col-sm-2 control-label" %>
     <div class="col-sm-5">
       <%= f.collection_select :cliente_id, Cliente.all, :id, :to_s, {prompt: false}, {:class => "form-control"} %>
