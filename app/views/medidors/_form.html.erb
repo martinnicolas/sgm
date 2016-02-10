@@ -1,5 +1,5 @@
-<div id='map-medidor'></div>
-
+<div id='map-medidor'>
+</div>
 <br/>
 
 <%= form_for(@medidor, html: { class: "form-horizontal", role: "form" }) do |f| %>
@@ -65,10 +65,25 @@
     function makeMarker(e) {
       if (markers.length > 0) return;
       var marker = L.marker(e.latlng, { draggable: true }).addTo(map);
+      marker.bindPopup("<input type='button' value='Eliminar marcador' id='boton' class='btn btn-primary'/>");
+      marker.on("popupopen", onPopupOpen);
       markers.push(marker);
       var latlng = marker._latlng;
       var medidor = { medidor: { latitud: latlng.lat, longitud: latlng.lng } }
       $.post('/medidors/store_medidor',medidor);  
-    }              
+    }
+
+    // Function to handle delete as well as other events on marker popup open
+    function onPopupOpen() {
+
+      var tempMarker = this;
+
+      // To remove marker on click of delete
+      $("#boton:visible").click(function () {
+          map.removeLayer(tempMarker);
+          markers.pop();
+      });
+    }
+
   });
 </script>
