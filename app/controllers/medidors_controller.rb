@@ -45,6 +45,25 @@ class MedidorsController < ApplicationController
 
   # GET /medidors/1/edit
   def edit
+    @medidor = Medidor.find(params[:id])
+
+    @geojson = Array.new
+    @geojson << {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [@medidor.longitud, @medidor.latitud]
+      },
+      properties: {
+        title: @medidor.nombre,
+        description: Cliente.find(@medidor.cliente_id).domicilio,
+        name: @medidor.nombre,
+        address: Cliente.find(@medidor.cliente_id).domicilio,
+        :'marker-color' => '#00607d',
+        :'marker-symbol' => 'circle-stroked',
+        :'marker-size' => 'medium'
+      }
+    }
   end
 
   # POST /medidors
