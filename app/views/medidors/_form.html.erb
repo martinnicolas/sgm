@@ -39,6 +39,8 @@
       <%= f.text_field :novedades_criticas, class: "form-control" %>
     </div>
   </div>
+  <%= hidden_field(:medidor, :latitud) %>
+  <%= hidden_field(:medidor, :longitud) %>
   <div class="form-group">
     <%= f.label :cliente_id, "Cliente", class: "col-sm-2 control-label" %>
     <div class="col-sm-5">
@@ -64,6 +66,11 @@
 
     var markers = [];
 
+    <% if @geojson %>
+      L.mapbox.featureLayer().setGeoJSON(<%= raw @geojson.to_json %>).addTo(map);
+      //markers.push();
+    <% end %>
+
     //Function that makes a Marker
     function makeMarker(e) {
       if (markers.length > 0) return;
@@ -75,14 +82,20 @@
       marker.on("popupopen", onPopupOpen);
       markers.push(marker);
       var latlng = marker._latlng;
-      var medidor = { medidor: { latitud: latlng.lat, longitud: latlng.lng } }
-      $.post('/medidors/store_medidor',medidor);  
+      $('#medidor_latitud').val(latlng.lat);
+      $('#medidor_longitud').val(latlng.lng);
+      //document.getElementById('medidor_latitud').value = latlng.lat;
+      //document.getElementById('medidor_longitud').value = latlng.lng;
+      console.log('latitud: '+document.getElementById('medidor_latitud').value+ 'longitud: '+document.getElementById('medidor_longitud').value);
+      //$.post('/medidors/store_medidor',medidor);  
     }
     // Function to handle delete as well as other events on marker popup open
     function onPopupOpen() {
       var tempMarker = this;
       // To remove marker on click of delete
       $("#boton_eliminar:visible").click(function () {
+          $('#medidor_latitud').val('');
+          $('#medidor_longitud').val('');
           map.removeLayer(tempMarker);
           markers.pop();
       });

@@ -3,11 +3,6 @@ require 'json'
 class MedidorsController < ApplicationController
   before_action :set_medidor, only: [:show, :edit, :update, :destroy]
 
-  def store_medidor     
-    session[:medidor] = params[:medidor]
-    render :nothing => true
-  end
-
   # GET /medidors
   # GET /medidors.json
   def index
@@ -69,11 +64,7 @@ class MedidorsController < ApplicationController
   # POST /medidors
   # POST /medidors.json
   def create
-    medidor_location = session[:medidor]    
     @medidor = Medidor.new(medidor_params)
-    @medidor.latitud = medidor_location['latitud']
-    @medidor.longitud = medidor_location['longitud']
-    @medidor.save
 
     respond_to do |format|
       if @medidor.save
